@@ -12,18 +12,18 @@ public class MainController {
     private TabPane container;
 
     @FXML
-    private Button clientsBtn;
+    private Button schoolsBtn;
 
     @FXML
-    private Button gardenersBtn;
+    private Button projectsBtn;
 
     @FXML
     protected void onSelectList(Event event) {
         Button sourceButton = (Button) event.getSource();
         String option;
-        if(sourceButton == clientsBtn)
-            option = "clients";
-        else option = "gardeners";
+        if(sourceButton == schoolsBtn)
+            option = "schools";
+        else option = "projects";
         ListTask listTask = new ListTask(option, container);
         controlListTask(listTask);
         Thread thread = new Thread(listTask);
