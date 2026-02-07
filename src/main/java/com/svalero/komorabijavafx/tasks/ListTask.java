@@ -4,7 +4,9 @@ package com.svalero.komorabijavafx.tasks;
 import com.google.gson.reflect.TypeToken;
 import com.svalero.komorabijavafx.models.Project;
 import com.svalero.komorabijavafx.models.School;
+import com.svalero.komorabijavafx.utils.DateUtil;
 import javafx.application.Platform;
+import javafx.beans.property.ReadOnlyStringWrapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -86,7 +88,17 @@ public  class ListTask extends Task<Void> {
         publicColumn.setCellValueFactory(new PropertyValueFactory<>("publicSchool"));
 
         TableColumn<School, String> registerDateColumn = new TableColumn<>("Register date");
-        registerDateColumn.setCellValueFactory(new PropertyValueFactory<>("registerDate"));
+        registerDateColumn.setCellValueFactory(cellData -> {
+            String rawDate = cellData.getValue().getRegisterDate();
+
+            String formattedDate = DateUtil.formatFromString(
+                    rawDate,
+                    "dd/MM/yyyy",
+                    "yyyy-MM-dd"
+            );
+
+            return new ReadOnlyStringWrapper(formattedDate);
+        });
 
 
         tableView.getColumns().add(nameColumn);
