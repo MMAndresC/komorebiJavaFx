@@ -6,6 +6,6 @@ module com.svalero.komorabijavafx {
 
 
     opens com.svalero.komorabijavafx.controllers to javafx.fxml;
-    opens com.svalero.komorabijavafx.models to com.google.gson;
+    opens com.svalero.komorabijavafx.models to javafx.base, com.google.gson;
     exports com.svalero.komorabijavafx;
 }
