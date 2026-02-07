@@ -5,7 +5,7 @@ public class School {
     private String name;
     private String city;
     private int students;
-    private boolean isPublic;
+    private boolean publicSchool;
     private String registerDate;
 
     public long getId() {
@@ -40,12 +40,12 @@ public class School {
         this.students = students;
     }
 
-    public boolean isPublic() {
-        return isPublic;
+    public boolean isPublicSchool() {
+        return publicSchool;
     }
 
-    public void setPublic(boolean aPublic) {
-        isPublic = aPublic;
+    public void setPublicSchool(boolean publicSchool) {
+        this.publicSchool = publicSchool;
     }
 
     public String getRegisterDate() {

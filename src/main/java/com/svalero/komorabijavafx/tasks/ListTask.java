@@ -83,7 +83,7 @@ public  class ListTask extends Task<Void> {
         studentsColumn.setCellValueFactory(new PropertyValueFactory<>("students"));
 
         TableColumn<School, Boolean> publicColumn = new TableColumn<>("Is public?");
-        publicColumn.setCellValueFactory(new PropertyValueFactory<>("isPublic"));
+        publicColumn.setCellValueFactory(new PropertyValueFactory<>("publicSchool"));
 
         TableColumn<School, String> registerDateColumn = new TableColumn<>("Register date");
         registerDateColumn.setCellValueFactory(new PropertyValueFactory<>("registerDate"));
